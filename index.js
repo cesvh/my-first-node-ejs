@@ -28,7 +28,7 @@ app.get('/help', (req, res) => {
     });
 });
 // Static files
-// app.use(express.static('public/'));
+app.use(express.static('views/public/'));
 app.listen(PORT, () => {
     console.log(`Server runnning on http://localhost:${PORT}`);
 });
