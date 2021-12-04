@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <h1><%= h1 %></h1>
+        <div>
+            <p><%= p %></p>
+        </div>
+        <a href="/">Go home!</a>
+        <ul>
+            <% for(let i = 0; i < items.length; i++) { %>
+                <li><%= items[i].item %></li>
+            <% } %>
+        </ul>
+        <form action="/items" method="post">
+            <input type="text" name="txtItem" id="txtItem">
+            <button type="submit">Add Item</button>
+        </form>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

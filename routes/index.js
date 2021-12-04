@@ -1,26 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const controller = require('../controllers/');
 
-router.get('/', (req, res) => {
-    res.render('pages', {
-        title: "index.ejs",
-        h1: "Welcome to my website!",
-        p: "main > div > p > index.ejs"
-    });
-});
-router.get('/about', (req, res) => {
-    res.render('pages/about', {
-        title: "about.ejs",
-        h1: "About me!",
-        p: "main > div > p > about.ejs"
-    });
-});
-router.get('/help', (req, res) => {
-    res.render('pages/help', {
-        title: "help.ejs",
-        h1: "About me!",
-        p: "main > div > p > help.ejs"
-    });
-});
+router.get('/', controller.index);
+router.get('/about', controller.about);
+router.get('/help', controller.help);
+router.get('/item', controller.getItems);
+router.post('/items', controller.addItems);
 
 module.exports = router;

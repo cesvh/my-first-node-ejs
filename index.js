@@ -5,10 +5,11 @@ const PORT = process.env.PORT || 3000;
 // Settings
 app.set('view engine', 'ejs');
 // Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 // Routes
 const router = require('./routes');
 app.use(router);
-
 // Static files
 app.use(express.static('public'));
 app.listen(PORT, () => {
